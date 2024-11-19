@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CBBF442E-9885-4B38-B9C9-9B306F6DA3AC}</ProjectGuid>
+    <ProjectGuid>{C8DFB882-3B44-4645-A87C-E0937D8B1B91}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>VoidChests</RootNamespace>
@@ -32,19 +32,25 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="0Harmony">
-      <HintPath>D:\ steam\steamapps\common\Techtonica\BepInEx\core\0Harmony.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Techtonica\BepInEx\core\0Harmony.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp-firstpass_publicized">
-      <HintPath>D:\ steam\steamapps\common\Techtonica\Techtonica_Data\Managed\publicized_assemblies\Assembly-CSharp-firstpass_publicized.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Techtonica\Techtonica_Data\Managed\publicized_assemblies\Assembly-CSharp-firstpass_publicized.dll</HintPath>
     </Reference>
     <Reference Include="Assembly-CSharp_publicized">
-      <HintPath>D:\ steam\steamapps\common\Techtonica\Techtonica_Data\Managed\publicized_assemblies\Assembly-CSharp_publicized.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Techtonica\Techtonica_Data\Managed\publicized_assemblies\Assembly-CSharp_publicized.dll</HintPath>
     </Reference>
     <Reference Include="BepInEx">
-      <HintPath>D:\ steam\steamapps\common\Techtonica\BepInEx\core\BepInEx.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Techtonica\BepInEx\core\BepInEx.dll</HintPath>
+    </Reference>
+    <Reference Include="EMUAdditions">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Techtonica\BepInEx\plugins\EMUAdditions\EMUAdditions.dll</HintPath>
+    </Reference>
+    <Reference Include="EquinoxsDebuggingTools">
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Techtonica\BepInEx\plugins\EquinoxsDebuggingTools\EquinoxsDebuggingTools.dll</HintPath>
     </Reference>
     <Reference Include="EquinoxsModUtils">
-      <HintPath>D:\ steam\steamapps\common\Techtonica\BepInEx\plugins\EquinoxsModUtils\EquinoxsModUtils.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Techtonica\BepInEx\plugins\EquinoxsModUtils\EquinoxsModUtils.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -54,31 +60,36 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="Unity.Collections">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Techtonica\Techtonica_Data\Managed\Unity.Collections.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine">
-      <HintPath>D:\ steam\steamapps\common\Techtonica\Techtonica_Data\Managed\UnityEngine.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Techtonica\Techtonica_Data\Managed\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Techtonica\Techtonica_Data\Managed\UnityEngine.AssetBundleModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>D:\ steam\steamapps\common\Techtonica\Techtonica_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>D:\ steam\steamapps\common\Techtonica\Techtonica_Data\Managed\UnityEngine.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UIModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>D:\ steam\steamapps\common\Techtonica\Techtonica_Data\Managed\UnityEngine.UIModule.dll</HintPath>
+      <HintPath>C:\Program Files (x86)\Steam\steamapps\common\Techtonica\Techtonica_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Patches\ChestDefinitionPatch.cs" />
-    <Compile Include="Patches\InserterInstancePatch.cs" />
-    <Compile Include="Patches\InventoryNavigatorPatch.cs" />
+    <Compile Include="ContentAdder.cs" />
+    <Compile Include="Patches\FlowManager.cs" />
+    <Compile Include="Patches\MachineDefinition.cs" />
     <Compile Include="VoidChestsPlugin.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="VoidChest" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\VoidChest.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>mkdir "D:\ steam\steamapps\common\Techtonica\BepInEx\plugins\$(TargetName)"
-xcopy /q/y/i "$(TargetPath)" "D:\ steam\steamapps\common\Techtonica\BepInEx\plugins\$(TargetName)" /E /H /C</PostBuildEvent>
+    <PostBuildEvent>mkdir "C:\Program Files (x86)\Steam\steamapps\common\Techtonica\BepInEx\plugins\$(TargetName)"
+xcopy /q/y/i "$(TargetPath)" "C:\Program Files (x86)\Steam\steamapps\common\Techtonica\BepInEx\plugins\$(TargetName)" /E /H /C</PostBuildEvent>
   </PropertyGroup>
 </Project>
