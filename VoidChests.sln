@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.8.34525.116
+VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoidChests", "VoidChests\VoidChests.csproj", "{CBBF442E-9885-4B38-B9C9-9B306F6DA3AC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoidChests", "VoidChests\VoidChests.csproj", "{C8DFB882-3B44-4645-A87C-E0937D8B1B91}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CBBF442E-9885-4B38-B9C9-9B306F6DA3AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CBBF442E-9885-4B38-B9C9-9B306F6DA3AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CBBF442E-9885-4B38-B9C9-9B306F6DA3AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CBBF442E-9885-4B38-B9C9-9B306F6DA3AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8DFB882-3B44-4645-A87C-E0937D8B1B91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8DFB882-3B44-4645-A87C-E0937D8B1B91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8DFB882-3B44-4645-A87C-E0937D8B1B91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8DFB882-3B44-4645-A87C-E0937D8B1B91}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {76BC03F0-E6A3-4495-A005-5B1BC39D9231}
+		SolutionGuid = {D6DF0C73-2793-48FF-B745-B4BC98BFCF1F}
 	EndGlobalSection
 EndGlobal
